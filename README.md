@@ -6,11 +6,11 @@ This is my template repository to use when creating new npm packages written in 
 
 You will need to install [Node.js](https://nodejs.org/en/) before using this template.
 
-1. Click "[Use this template](https://github.com/cipscis/base-package/generate)" to create a new repository based on this one.
+1. Click "[Use this template](https://github.com/cipscis/expander/generate)" to create a new repository based on this one.
 2. Update names throughout the package.
-	a. Replace `base-package` with the name of your package as it is used in code.
-	b. Replace `Base Package` Replace with the name of your package as it is used in documentation.
-	c. Rename `src/main-export.ts` and replace `main-export` with the name of your main entry point file.
+	a. Replace `expander` with the name of your package as it is used in code.
+	b. Replace `Expander` Replace with the name of your package as it is used in documentation.
+	c. Rename `src/expander.ts` and replace `expander` with the name of your main entry point file.
 	d. Optionally rename `docs/assets/js/src/docs-script.ts` and replace `docs-script` with the name of your documentation script and its associated Webpack entry point.
 	e. Optionally, remove `@cipscis/` from everywhere it appears if this package won't be published beneath a scope.
 	f. If you're not me, replace `@cipscis` with your npm username and then `cipscis` with your GitHub username, and be sure to also update the `author` property in the `package.json`.
@@ -24,19 +24,19 @@ Now you're ready to work on code in this package.
 
 Using the files specified in `package.json`, you can create a package to be installed with npm.
 
-In the `docs` folder, which can be deployed to GitHub Pages but is not included when your package is installed, you can document your package. Webpack is configured to have an alias for your main entry point so you can load it as though it were installed from npm, e.g. `import { foo } from '@cipscis/base-package';`
+In the `docs` folder, which can be deployed to GitHub Pages but is not included when your package is installed, you can document your package. Webpack is configured to have an alias for your main entry point so you can load it as though it were installed from npm, e.g. `import { foo } from '@cipscis/expander';`
 
 Once you have an initial version of your package ready to push, you will want to update the `version` attribute of your `package.json` file to `"1.0.0"`. See [Semantic Versioning](https://semver.org/spec/v2.0.0.html) for more information on version numbers.
 
 You should also update the `CHANGELOG.md` file to describe your changes. This is particularly important after your initial 1.0.0 version.
 
-Then, you can run `npm publish` to publish your package. Once published, you can run `npm install @cipscis/base-package` to install the package in other projects.
+Then, you can run `npm publish` to publish your package. Once published, you can run `npm install @cipscis/expander` to install the package in other projects.
 
 ## Structure
 
 ### Frontend assets
 
-By default, your package consists of the contents of the `dist` folder. This folder is populated when the contents of the `src` folder are compiled using `tsc`, which happens automatically prior to publishing. The `src` folder contains a single TypeScript file called `main-export.ts`. You can rename this file, but if you do make sure you update the [`browser`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#browser) property in your `package.json` file. If your package doesn't need to be run in a browser, you should change this property to [`main`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#main).
+By default, your package consists of the contents of the `dist` folder. This folder is populated when the contents of the `src` folder are compiled using `tsc`, which happens automatically prior to publishing. The `src` folder contains a single TypeScript file called `expander.ts`. You can rename this file, but if you do make sure you update the [`browser`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#browser) property in your `package.json` file. If your package doesn't need to be run in a browser, you should change this property to [`main`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#main).
 
 Assets used for the package's documentation, such as CSS and JavaScript, are contained in `/docs/assets`. In here, the contents of the `scss` folder are used to compile CSS files into the `css` folder.
 
@@ -78,7 +78,7 @@ By default, the tests are run as part of the `npm prepare` script, which runs pr
 
 This project is set up to use a GitHub Action every time new code is pushed to the `main` branch. This `build-and-deploy` workflow runs the `build` npm script, then runs the test script, then if the tests passed it deploys the contents of the `docs` directory by committing them to a `gh-pages` branch. This `gh-pages` branch should be configured in GitHub to be published to GitHub Pages.
 
-When publishing a project using [GitHub Pages](https://pages.github.com/), the project usually appears at a URL with a path, such as `https://cipscis.github.io/base-package`. This means using root relative URLs such as `/assets/css/main.css` would work locally, but would break when the project is published on GitHub Pages.
+When publishing a project using [GitHub Pages](https://pages.github.com/), the project usually appears at a URL with a path, such as `https://cipscis.github.io/expander`. This means using root relative URLs such as `/assets/css/main.css` would work locally, but would break when the project is published on GitHub Pages.
 
 To fix this, the local Node.js server looks for a `PROJECT_NAME` variable in your [`.env`](#env-1) file. If it finds one, it sets up redirects so URLs starting with `/${PROJECT_NAME}` can be used as though they were root relative, so they will find your assets.
 
@@ -88,23 +88,23 @@ To fix this, the local Node.js server looks for a `PROJECT_NAME` variable in you
 
 ---
 
-# base-package
+# expander
 
-![Build and deploy status badge](https://github.com/cipscis/base-package/actions/workflows/build-and-deploy.yml/badge.svg)
+![Build and deploy status badge](https://github.com/cipscis/expander/actions/workflows/build-and-deploy.yml/badge.svg)
 
 ## Install
 
-Run `npm install @cipscis/base-package`
+Run `npm install @cipscis/expander`
 
 ## Usage
 
-See [Base Package documentation](https://cipscis.github.io/base-package/)
+See [Expander documentation](https://cipscis.github.io/expander/)
 
 ## Development
 
 You will need to install [Node.js](https://nodejs.org/en/) before working on this package.
 
-1. Clone the repository using `git clone https://github.com/cipscis/base-package.git`.
+1. Clone the repository using `git clone https://github.com/cipscis/expander.git`.
 2. Run `npm install` to install development dependencies.
 3. Create a [`.env`](#env) file.
 4. Run `npm start` to run the local server and watch CSS and JS files for changes.
@@ -144,7 +144,7 @@ Used by [Express](https://expressjs.com/) to determine which port to use when ru
 An example `.env` file you can use for development is:
 
 ```
-PROJECT_NAME = "base-package"
+PROJECT_NAME = "expander"
 MODE = "development"
 PORT = "8080"
 ```

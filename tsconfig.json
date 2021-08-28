@@ -9,7 +9,7 @@
 		"strict": true,
 		"moduleResolution": "node",
 		"paths": {
-			"@cipscis/base-package": ["./src/main-export.ts"]
+			"@cipscis/expander": ["./src/expander.ts"]
 		},
 		"esModuleInterop": true,
 		"skipLibCheck": true,

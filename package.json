@@ -1,14 +1,14 @@
 {
-	"name": "@cipscis/base-package",
+	"name": "@cipscis/expander",
 	"version": "0.1.0",
 	"description": "This is my base project to use when creating new packages.",
 	"private": true,
-	"browser": "./dist/main-export.js",
+	"browser": "./dist/expander.js",
 	"type": "module",
 	"files": [
 		"dist/**/*"
 	],
-	"types": "dist/main-export.d.ts",
+	"types": "dist/expander.d.ts",
 	"scripts": {
 		"server": "node server/server.js",
 		"build": "gulp build",
@@ -20,7 +20,7 @@
 	"author": "Mark Hanna",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/cipscis/base-package.git"
+		"url": "https://github.com/cipscis/expander.git"
 	},
 	"license": "Hippocratic-2.1",
 	"devDependencies": {

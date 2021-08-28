@@ -1,4 +1,4 @@
-import { foo } from '../dist/main-export.js';
+import { foo } from '../dist/expander.js';
 
 describe('foo', () => {
 	it('returns true', () => {

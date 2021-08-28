@@ -21,7 +21,7 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.ts'],
 		alias: {
-			'@cipscis/base-package': `${srcPath}/main-export.ts`,
+			'@cipscis/expander': `${srcPath}/expander.ts`,
 		},
 	},
 	module: {
