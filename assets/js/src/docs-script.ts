@@ -1,3 +1,3 @@
-import { foo } from '@cipscis/base-package';
+import * as expander from '@cipscis/expander';
 
-console.log(foo());
+expander.init();

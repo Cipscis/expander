@@ -1,0 +1,22 @@
+.expander {}
+
+.expander__trigger {
+	cursor: pointer;
+}
+
+.expander__body {
+	display: block;
+	.expander[aria-expanded="false"] & {
+		display: none;
+	}
+}
+
+@media print {
+	.expander__trigger::before {
+		display: none;
+	}
+
+	.expander__body {
+		display: block !important;
+	}
+}

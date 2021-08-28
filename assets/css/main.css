@@ -1,0 +1,21 @@
+@import "https://cipscis.github.io/portfolio/assets/css/style.css";
+.expander__trigger {
+  cursor: pointer;
+}
+
+.expander__body {
+  display: block;
+}
+.expander[aria-expanded=false] .expander__body {
+  display: none;
+}
+
+@media print {
+  .expander__trigger::before {
+    display: none;
+  }
+
+  .expander__body {
+    display: block !important;
+  }
+}
