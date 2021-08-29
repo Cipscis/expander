@@ -1,6 +1,6 @@
 {
 	"name": "@cipscis/expander",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "This is my base project to use when creating new packages.",
 	"private": true,
 	"browser": "./dist/expander.js",
