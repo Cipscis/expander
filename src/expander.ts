@@ -1,3 +1,5 @@
+import { activate } from '@cipscis/activate';
+
 enum ExpanderState {
 	OPENED = 'Opened',
 	CLOSED = 'Closed',
@@ -27,7 +29,7 @@ function init() {
  */
 function _initEvents() {
 	// TODO: Use @cipscis/activate
-	document.addEventListener('click', _processTriggerClickEvent);
+	activate(selectors.trigger, _processTriggerClickEvent);
 
 	window.addEventListener('hashchange', _openByTarget);
 }
@@ -38,18 +40,16 @@ function _initEvents() {
  *
  * @param {MouseEvent} e
  */
-function _processTriggerClickEvent(e: MouseEvent): void {
-	const $target = e.target;
+function _processTriggerClickEvent(this: HTMLElement, e: MouseEvent | KeyboardEvent): void {
+	const $target = this;
 
-	if ($target instanceof HTMLElement) {
-		const $trigger = $target.closest<HTMLElement>(selectors.trigger);
-		if ($trigger) {
-			e.preventDefault();
+	const $trigger = $target.closest<HTMLElement>(selectors.trigger);
+	if ($trigger) {
+		e.preventDefault();
 
-			const $expander = _getTriggerExpander($trigger);
-			if ($expander) {
-				_toggleExpander($expander);
-			}
+		const $expander = _getTriggerExpander($trigger);
+		if ($expander) {
+			_toggleExpander($expander);
 		}
 	}
 }
