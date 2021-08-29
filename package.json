@@ -1,7 +1,7 @@
 {
 	"name": "@cipscis/expander",
-	"version": "1.0.0",
-	"description": "This is my base project to use when creating new packages.",
+	"version": "1.0.1",
+	"description": "HTML sections that expand and collapse with user input.",
 	"browser": "./dist/expander.js",
 	"type": "module",
 	"files": [
